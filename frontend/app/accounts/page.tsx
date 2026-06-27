@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { StatusBadge } from '@/components/ui/StatusBadge';
-import { Search } from 'lucide-react';
+import { Search, Phone, MessageSquare, Play, Mail, FileText, Image, Video, ExternalLink } from 'lucide-react';
 
 const platforms = [
   {
