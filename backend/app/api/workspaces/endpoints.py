@@ -20,6 +20,9 @@ async def create_workspace(
     current_user_id: str = Depends(verify_token),
     db: Session = Depends(get_db)
 ):
+    # Get organization_id from request body
+    organization_id = workspace_in.organization_id
+    
     # Check if workspace slug is unique
     existing_workspace = db.query(Workspace).filter(
         Workspace.slug == workspace_in.slug

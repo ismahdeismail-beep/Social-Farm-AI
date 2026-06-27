@@ -1,6 +1,12 @@
+"""
+Core domain models for Social Farm AI.
+
+Re-exports Base, mixins, and all model classes for convenience.
+"""
+
+from app.models.base import Base, TimestampMixin, SoftDeleteMixin
 from sqlalchemy import Column, String, Text, Boolean, DateTime, ForeignKey, UUID as SQLUUID, Integer
 from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
 from typing import Optional
@@ -8,8 +14,6 @@ import uuid
 
 # Re-export database session dependency for convenience
 from app.db import get_db
-
-Base = declarative_base()
 
 # Import AI models
 from app.models.ai import (
@@ -33,22 +37,6 @@ from app.models.research import (
     ResearchQueryDocument, ResearchDocumentTag, ResearchEntityDocument,
     ResearchReportDocument
 )
-
-
-class TimestampMixin:
-    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
-    updated_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc),
-                       onupdate=lambda: datetime.now(timezone.utc), nullable=False)
-
-
-class SoftDeleteMixin:
-    deleted_at = Column(DateTime(timezone=True), nullable=True)
-
-    def soft_delete(self):
-        self.deleted_at = datetime.now(timezone.utc)
-
-    def restore(self):
-        self.deleted_at = None
 
 
 class Organization(Base, TimestampMixin, SoftDeleteMixin):

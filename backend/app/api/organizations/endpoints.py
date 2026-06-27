@@ -356,7 +356,7 @@ async def remove_member(
     # Remove workspace memberships
     db.query(WorkspaceMember).filter(
         WorkspaceMember.user_id == user_id
-    ).update({"status": "inactive"})
+    ).delete()
     
     db.commit()
     

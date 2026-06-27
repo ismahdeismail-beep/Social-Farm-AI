@@ -305,7 +305,7 @@ class ResearchDocument(Base, TimestampMixin, SoftDeleteMixin, AuditMixin):
     relevance_score = Column(Float, default=0.0)
     is_duplicate = Column(Boolean, default=False)
     duplicate_of_id = Column(UUID(as_uuid=True), ForeignKey('research_documents.id'), nullable=True)
-    metadata = Column(JSONType, default=dict)  # Source-specific metadata
+    extra_data = Column("metadata", JSONType, default=dict)  # Source-specific metadata
     source_id = Column(UUID(as_uuid=True), ForeignKey('research_sources.id'), nullable=True)
     organization_id = Column(UUID(as_uuid=True), ForeignKey('organizations.id'), nullable=True)
     workspace_id = Column(UUID(as_uuid=True), ForeignKey('workspaces.id'), nullable=True)
@@ -348,7 +348,7 @@ class ResearchDocument(Base, TimestampMixin, SoftDeleteMixin, AuditMixin):
             'relevance_score': self.relevance_score,
             'is_duplicate': self.is_duplicate,
             'duplicate_of_id': self.duplicate_of_id,
-            'metadata': self.metadata,
+            'metadata': self.extra_data,
             'source_id': self.source_id,
             'organization_id': self.organization_id,
             'workspace_id': self.workspace_id,
@@ -689,7 +689,7 @@ class ResearchEntity(Base, TimestampMixin, SoftDeleteMixin):
     description = Column(Text)
     canonical_name = Column(String(500))  # Normalized form
     aliases = Column(ARRAY(String), default=list)  # Alternative names
-    metadata = Column(JSONType, default=dict)
+    extra_data = Column("metadata", JSONType, default=dict)
     confidence = Column(Float, default=0.0)
     mention_count = Column(Integer, default=1)
     first_seen_at = Column(DateTime(timezone=True))
@@ -724,7 +724,7 @@ class ResearchEntity(Base, TimestampMixin, SoftDeleteMixin):
             'description': self.description,
             'canonical_name': self.canonical_name,
             'aliases': self.aliases,
-            'metadata': self.metadata,
+            'metadata': self.extra_data,
             'confidence': self.confidence,
             'mention_count': self.mention_count,
             'first_seen_at': self.first_seen_at,
@@ -982,7 +982,7 @@ class ResearchHistory(Base, TimestampMixin):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     action = Column(String(100), nullable=False)  # query_executed, document_added, collection_created, etc.
     description = Column(Text)
-    metadata = Column(JSONType, default=dict)
+    extra_data = Column("metadata", JSONType, default=dict)
     query_id = Column(UUID(as_uuid=True), ForeignKey('research_queries.id'), nullable=True)
     document_id = Column(UUID(as_uuid=True), ForeignKey('research_documents.id'), nullable=True)
     collection_id = Column(UUID(as_uuid=True), ForeignKey('research_collections.id'), nullable=True)
@@ -1003,7 +1003,7 @@ class ResearchHistory(Base, TimestampMixin):
             'id': self.id,
             'action': self.action,
             'description': self.description,
-            'metadata': self.metadata,
+            'metadata': self.extra_data,
             'query_id': self.query_id,
             'document_id': self.document_id,
             'collection_id': self.collection_id,

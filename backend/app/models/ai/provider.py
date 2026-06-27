@@ -4,7 +4,7 @@ AI Provider Models
 Defines AI providers, model profiles, and health tracking.
 """
 
-from sqlalchemy import Column, String, Text, Boolean, DateTime, ForeignKey, Integer, Float, JSON as JSONType
+from sqlalchemy import Column, String, Text, Boolean, DateTime, ForeignKey, Integer, Float, JSON as JSONType, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
@@ -135,7 +135,7 @@ class ModelProfile(Base, TimestampMixin, SoftDeleteMixin):
     executions = relationship('Execution', back_populates='model')
     
     __table_args__ = (
-        {'unique_constraint': ('provider_id', 'model_id')},
+        UniqueConstraint('provider_id', 'model_id', name='uq_model_profile_provider_model'),
     )
     
     def to_dict(self):

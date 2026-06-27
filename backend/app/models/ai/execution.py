@@ -69,7 +69,7 @@ class Execution(Base, TimestampMixin, SoftDeleteMixin):
     
     # Context
     context = Column(JSONType, default=dict)
-    metadata = Column(JSONType, default=dict)
+    extra_data = Column("metadata", JSONType, default=dict)
     
     # Error
     error = Column(Text)
@@ -118,7 +118,7 @@ class Execution(Base, TimestampMixin, SoftDeleteMixin):
             'quality_score': self.quality_score,
             'quality_details': self.quality_details,
             'context': self.context,
-            'metadata': self.metadata,
+            'metadata': self.extra_data,
             'error': self.error,
             'error_type': self.error_type,
             'error_details': self.error_details,

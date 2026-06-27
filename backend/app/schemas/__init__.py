@@ -14,8 +14,8 @@ from app.schemas.rbac import (
 )
 from app.schemas.brand import (
     BrandCreate, BrandUpdate, BrandResponse,
-    ProjectCreate, ProjectUpdate, ProjectResponse,
-    ContentProfileCreate, ContentProfileUpdate, ContentProfileResponse,
+    BrandVoiceCreate, BrandVoiceUpdate, BrandVoiceResponse,
+    BrandIdentityCreate, BrandIdentityUpdate, BrandIdentityResponse,
 )
 from app.schemas.research import (
     ResearchSourceCreate, ResearchSourceUpdate, ResearchSourceResponse,

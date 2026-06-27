@@ -59,7 +59,7 @@ class AgentTask(Base, TimestampMixin, SoftDeleteMixin):
     
     # Context
     context = Column(JSONType, default=dict)  # Additional context for the agent
-    metadata = Column(JSONType, default=dict)
+    extra_data = Column("metadata", JSONType, default=dict)
     
     # Relationships
     workflow = relationship('Workflow', back_populates='tasks')
@@ -91,7 +91,7 @@ class AgentTask(Base, TimestampMixin, SoftDeleteMixin):
             'tokens_used': self.tokens_used,
             'cost_usd': self.cost_usd,
             'context': self.context,
-            'metadata': self.metadata,
+            'metadata': self.extra_data,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'deleted_at': self.deleted_at
