@@ -1,11 +1,11 @@
 services:
   - type: web
     name: social-farm-ai-backend
-    runtime: python
+    runtime: python-3.11.0
     plan: free
     buildCommand: |
       cd backend
-      pip install -r requirements.txt
+      pip install --upgrade pip && pip install -r requirements.txt
     startCommand: |
       cd backend
       uvicorn app.main:app --host 0.0.0.0 --port $PORT
@@ -20,7 +20,5 @@ services:
         value: "https://social-farm-ai.vercel.app,http://localhost:3000"
       - key: DEBUG
         value: "false"
-      - key: PYTHON_VERSION
-        value: "3.11.0"
     healthCheckPath: /health
     autoDeploy: true
