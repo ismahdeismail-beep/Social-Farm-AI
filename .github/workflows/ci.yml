@@ -16,31 +16,6 @@ jobs:
       run:
         working-directory: backend
 
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_DB: socialfarm
-          POSTGRES_USER: user
-          POSTGRES_PASSWORD: password
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready -U user -d socialfarm
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-      redis:
-        image: redis:7
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
       - uses: actions/checkout@v4
 
@@ -69,8 +44,6 @@ jobs:
       - name: Run tests
         run: pytest -v --cov=app --cov-report=xml --cov-report=term-missing
         env:
-          DATABASE_URL: postgresql://user:password@localhost:5432/socialfarm
-          REDIS_URL: redis://localhost:6379/0
           JWT_SECRET: ci-test-secret
 
       - name: Upload coverage to Codecov
