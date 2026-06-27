@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { FileText, Wand2, Hash, Edit3, Plus, Search, Filter, Grid, List, Save, Copy, Send, Clock, Sparkles, Type, Users, Globe, Archive, Tag, Calendar, BookOpen, Clock3, Layers, Trash2, Download, Upload, FileCheck, History, ChevronRight, Home, FolderOpen, PlusCircle, Filter as FilterIcon, Grid3x3, ListFilter, Star, StarOff, Lock, Unlock, Users2, Building2, Shield, Settings, Bell, Menu, X, Home as HomeIcon, TrendingUp, BarChart2, Target, Hash as HashIcon, Instagram, Youtube, Twitter, Facebook, Linkedin, FileAudio, Video, Image } from 'lucide-react';

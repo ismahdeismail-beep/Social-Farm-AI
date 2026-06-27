@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { Play, Plus, Trash2, Settings, Activity, Clock, CheckCircle, AlertTriangle, ChevronRight, GripVertical, Save, Eye, Users, Calendar, BarChart2, TrendingUp, Target, Bell, Filter as FilterIcon, Search } from 'lucide-react';
 import { Button } from '@/components/ui/Button';

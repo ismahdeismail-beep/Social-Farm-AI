@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { useState } from 'react';
 import { Calendar, Clock, CheckCircle, TrendingUp, Users, FileText, Hash, Target, BarChart2 } from 'lucide-react';
@@ -166,7 +167,7 @@ export default function DashboardPage() {
                   <div>
                     <h3 className='font-medium mb-1'>Content Ideas</h3>
                     <p className='text-xs text-gray-400 mb-2'>5 new content ideas suggested</p>
-                    <div class "text-xs text-orange-400 font-medium">Click for details →</div>
+                    <div className="text-xs text-orange-400 font-medium">Click for details →</div>
                   </div>
                 </div>
               </div>

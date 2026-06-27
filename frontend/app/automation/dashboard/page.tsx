@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect } from 'react';
 import { Activity, CheckCircle, Clock, AlertTriangle, Play, Pause, Square, TrendingUp, Users, Calendar, Settings, BarChart2, Bell, Trash2, RotateCcw, Eye, History, Filter, Search, Grid, List } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
