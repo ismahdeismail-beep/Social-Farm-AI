@@ -1,6 +1,7 @@
 'use client';
+'use client';
 import React, { useState } from 'react';
-import { Settings, Users, Shield, Bell, Globe, Database, MessageSquare, Calendar, CreditCard, Key, Webhook, FileText, Save, RotateCcw, Plus, Trash2, Edit3, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Settings, Users, Shield, Bell, Globe, Database, MessageSquare, Calendar, CreditCard, Key, Webhook, FileText, Save, RotateCcw, Plus, Trash2, Edit3, CheckCircle, AlertTriangle, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -199,10 +200,7 @@ export default function SettingsPage() {
                 <div className='space-y-4'> 
                   <div className='flex items-center justify-between p-4 bg-[#1A2230] rounded-lg'> 
                     <div className='flex items-center gap-3'> 
-                      <Avatar className='w-10 h-10'> 
-                        <AvatarImage /> 
-                        <AvatarFallback>JD</AvatarFallback> 
-                      </Avatar> 
+                      <Avatar fallback='JD' className='w-10 h-10' /> 
                       <div>
                         <h3 className='font-medium'>John Doe</h3>
                         <p className='text-sm text-gray-400'>john@company.com</p> 
@@ -216,10 +214,7 @@ export default function SettingsPage() {
                   </div> 
                   <div className='flex items-center justify-between p-4 bg-[#1A2230] rounded-lg'> 
                     <div className='flex items-center gap-3'> 
-                      <Avatar className='w-10 h-10'> 
-                        <AvatarImage /> 
-                        <AvatarFallback>AS</AvatarFallback> 
-                      </Avatar> 
+                      <Avatar fallback='AS' className='w-10 h-10' /> 
                       <div>
                         <h3 className='font-medium'>Alice Smith</h3>
                         <p className='text-sm text-gray-400'>alice@company.com</p> 

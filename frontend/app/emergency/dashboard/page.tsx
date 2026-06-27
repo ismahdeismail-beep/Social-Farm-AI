@@ -1,3 +1,5 @@
+'use client';
+'use client';
 import React, { useState, useEffect } from 'react';
 import { Activity, AlertTriangle, Bell, CheckCircle, Clock, Database, Download, TrendingUp, Users, Wifi, WifiOff, AlertCircle, Shield, Settings, BarChart2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
@@ -73,7 +75,7 @@ const EmergencyDashboard = () => {
     
     ws.onclose = () => {
       console.log('Emergency WebSocket disconnected');
-      setIsWebConnection(false);
+      setIsWebSocketConnected(false);
       // Attempt to reconnect after 5 seconds
       setTimeout(() => {
         // Reconnect logic will be handled by the main WS implementation
@@ -111,7 +113,7 @@ const EmergencyDashboard = () => {
       const response = await fetch('/api/notifications?unread=true');
       const data = await response.json();
       setNotifications(data);
-      } catch (error) {
+} catch (error) {
         console.error('Failed to fetch notifications:', error);
       }
   };
