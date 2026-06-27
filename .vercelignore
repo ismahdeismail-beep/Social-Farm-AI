@@ -1,0 +1,13 @@
+backend/
+docker/
+infrastructure/
+scripts/
+tests/
+docs/
+assets/
+shared/
+*.md
+render.yaml
+docker-compose.yml
+Dockerfile.*
+.dockerignore

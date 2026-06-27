@@ -1,0 +1,42 @@
+# Auto detect text files
+* text=auto
+
+# Python
+*.py diff=python
+
+# JavaScript / TypeScript
+*.js text
+*.ts text
+*.tsx text
+*.jsx text
+*.json text
+
+# Markdown
+*.md text diff=markdown
+
+# YAML
+*.yml text
+*.yaml text
+
+# Shell
+*.sh text eol=lf
+
+# Batch
+*.bat text eol=crlf
+
+# PowerShell
+*.ps1 text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary
+
+# Git
+*.gitattributes text
+*.gitignore text
