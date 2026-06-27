@@ -1,8 +1,9 @@
 import React from 'react';
-import { Phone, MessageSquare, Mail, Instagram, Play, FileText, Video, Image, Music, ExternalLink, Plus } from 'lucide-react';
-import { Button } from './ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
-import { StatusBadge } from './StatusBadge';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Input } from '@/components/ui/Input';
+import { StatusBadge } from '@/components/ui/StatusBadge';
+import { Search } from 'lucide-react';
 
 const platforms = [
   {

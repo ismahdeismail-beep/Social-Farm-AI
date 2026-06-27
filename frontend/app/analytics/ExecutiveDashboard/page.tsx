@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { useState } from 'react';
 import { Calendar, Clock, TrendingUp, Target, Hash, MessageSquare, Play, Image, Video, FileText, Users, BarChart2, Settings, Bell, Search, Plus, Filter, X, CheckCircle, AlertCircle, Clock as ClockIcon, MapPin, Calendar as CalendarIcon, TrendingUp as TrendingIcon, Users as UsersIcon, FileText as FileTextIcon, Star, Heart, Share2, MessageCircle, ThumbsUp, Eye, Bookmark, Download, Upload, Edit, Trash2, MoreVertical, Award, DollarSign, Globe, Smartphone, Monitor, Tablet } from 'lucide-react';
