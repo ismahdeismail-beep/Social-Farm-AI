@@ -111,9 +111,9 @@ const EmergencyDashboard = () => {
       const response = await fetch('/api/notifications?unread=true');
       const data = await response.json();
       setNotifications(data);
-    } catch (error) {
-      console EDF.error('Failed to fetch notifications:', error);
-    }
+      } catch (error) {
+        console.error('Failed to fetch notifications:', error);
+      }
   };
 
   const getSystemStatusColor = (status: string) => {

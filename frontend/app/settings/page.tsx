@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { Settings, Users, Shield, Bell, Globe, Database, MessageSquare, Calendar, CreditCard, Key, Webhook, FileText, Save, RotateCcw, Plus, Trash2, Edit3, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';

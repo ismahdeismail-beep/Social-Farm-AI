@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect } from 'react';
 import { Bell, CheckCircle, AlertTriangle, Activity, Clock, Trash2, Archive, Search, Filter, BellRing, BellOff, Check, X, Settings, Calendar, TrendingUp, Users, MessageSquare, FileText, Image, Video, Play } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
